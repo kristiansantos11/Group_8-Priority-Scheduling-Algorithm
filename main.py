@@ -1,5 +1,5 @@
 import matplotlib
-
+#QWERTRTYUIOPASFGHJKLZCVBNM<ASDFGHJKLQWRTYUIOP
 while True:
     try:
         process_amount = int(input('How many process? '))
