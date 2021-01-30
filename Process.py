@@ -27,7 +27,9 @@ class Process:
                f"Arrival Time: {self.arrival_time} " \
                f"Burst Time: {self.burst_time} " \
                f"Priority: {self.priority} " \
-               f"Remaining Burst Time: {self.remaining_burst_time} "
+               f"Remaining Burst Time: {self.remaining_burst_time} " \
+                f"Submission Time: {self.arrival_time}" \
+                f"Completion Time: {self.completion_time}"
 
 
 # Group the processes according to priority then sort each group according to process_id

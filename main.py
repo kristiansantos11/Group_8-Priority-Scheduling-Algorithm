@@ -55,13 +55,14 @@ current_time = 0
 
 # List of processes in a sequence.
 # Works like a timestamp of processes.
+# FOR SOME ODD REASON.
 sequence_of_process = list()
 
 # This is where the processing begins:
 while True:
     # Check if a process / processes needs to put to the waiting_queue
     print("Time: " + str(current_time))
-    _ = input("Press any key to continue...")
+    #_ = input("Press any key to continue...")
 
     # WARNING: THIS FOR LOOP DOES NOT WORK (YET) ==========================
     index_to_remove = list()
@@ -82,7 +83,7 @@ while True:
         print(process)
     # WARNING: READ ABOVE. ================================================
 
-    _ = input("Press any key to continue...")
+    #_ = input("Press any key to continue...")
 
     # Check if length of waiting queue is more than 1
     if len(ready_queue) >= 1:
@@ -90,7 +91,7 @@ while True:
         # Group the processes according to priority then sort each group according to process_id
         ready_queue = arrange(ready_queue)
 
-    _ = input("Press any key to continue...")
+    #_ = input("Press any key to continue...")
 
     if len(process_queue) == 0:
         if len(ready_queue) != 0:
@@ -113,13 +114,13 @@ while True:
             for process in ready_queue:
                 print(process)
 
-    _ = input("Press any key to continue...")
+    #_ = input("Press any key to continue...")
 
     print("Before process queue remaining burst time: " + str(process_queue[0].remaining_burst_time))
     process_queue[0].remaining_burst_time -= 1
     print("After process queue remaining burst time: " + str(process_queue[0].remaining_burst_time))
 
-    _ = input("Press any key to continue...")
+    #_ = input("Press any key to continue...")
 
     # If the burst time remaining is 0, then it should swapped out of process_queue
     # Then append the completed process to sequence_of_process
@@ -136,7 +137,7 @@ while True:
         elif len(ready_queue) == 0 and len(process_queue) == 0 and len(processes) == 0:
             break
 
-    _ = input("Press any key to continue...")
+    #_ = input("Press any key to continue...")
 
     current_time += 1
 
