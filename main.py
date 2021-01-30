@@ -105,8 +105,8 @@ while True:
         if ready_queue[0].priority < process_queue[0].priority:
             process_queue[0].completion_time = current_time
             sequence_of_process.append(process_queue[0])
-            ready_queue.insert(0, process_queue.pop(0))
             process_queue.append(ready_queue.pop(0))
+            ready_queue.insert(0, process_queue.pop(0))
 
             print("Process queue: \n" + str(process_queue[0]))
             print("Processes left inside ready_queue: ")
