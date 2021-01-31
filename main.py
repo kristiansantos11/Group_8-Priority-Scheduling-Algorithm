@@ -74,6 +74,7 @@ while True:
     for index in sorted(index_to_remove, reverse=True):
         processes.pop(index)
 
+    # DEBUG
     print("Processes left")
     for process in processes:
         print(process)
@@ -97,6 +98,8 @@ while True:
         if len(ready_queue) != 0:
             process_queue.append(ready_queue.pop(0))
             process_queue[0].submission_time = current_time
+
+        # DEBUG
         print("Process queue: \n" + str(process_queue[0]))
         print("Processes left inside ready_queue: ")
         for process in ready_queue:
@@ -109,15 +112,20 @@ while True:
             process_queue.append(ready_queue.pop(0))
             ready_queue.insert(0, process_queue.pop(0))
 
+            # DEBUG
             print("Process queue: \n" + str(process_queue[0]))
             print("Processes left inside ready_queue: ")
             for process in ready_queue:
                 print(process)
 
     #_ = input("Press any key to continue...")
-
+    # DEBUG
     print("Before process queue remaining burst time: " + str(process_queue[0].remaining_burst_time))
+
     process_queue[0].remaining_burst_time -= 1
+    current_time += 1
+
+    # DEBUG
     print("After process queue remaining burst time: " + str(process_queue[0].remaining_burst_time))
 
     #_ = input("Press any key to continue...")
@@ -139,7 +147,7 @@ while True:
 
     #_ = input("Press any key to continue...")
 
-    current_time += 1
+
 
 for process in sequence_of_process:
     print(process)
