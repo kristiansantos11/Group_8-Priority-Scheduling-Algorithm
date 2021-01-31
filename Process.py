@@ -7,20 +7,22 @@ class Process:
                  arrival_time,
                  burst_time,
                  priority,
-                 finished_state
+                 remaining_burst_time,
+                 submission_time,
+                 completion_time
                  ):
         self.process_id = process_id
         self.arrival_time = arrival_time
         self.burst_time = burst_time
         self.priority = priority
-        self.finished_state = finished_state
-        self.remaining_burst_time = burst_time
+
+        self.remaining_burst_time = remaining_burst_time
 
         # Submission time should change depending on the gantt chart
-        self.submission_time = arrival_time
+        self.submission_time = submission_time
 
         # Completion time should change depending on the gantt chart
-        self.completion_time = burst_time
+        self.completion_time = completion_time
 
     def __str__(self):
         return f"Process ID: {self.process_id} " \
@@ -28,8 +30,8 @@ class Process:
                f"Burst Time: {self.burst_time} " \
                f"Priority: {self.priority} " \
                f"Remaining Burst Time: {self.remaining_burst_time} " \
-                f"Submission Time: {self.arrival_time}" \
-                f"Completion Time: {self.completion_time}"
+                f"Submission Time: {self.submission_time} " \
+                f"Completion Time: {self.completion_time} "
 
 
 # Group the processes according to priority then sort each group according to process_id
