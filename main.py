@@ -2,8 +2,9 @@
 # Unlike the ones seen on the internet using lists (it's unreadable but efficient code.)
 # We tried to make this as readable as possible ;)
 # (and yes this takes into account duplicate arrival time AND priority level)
-from Process import Process, arrange
 from Computation import *
+from GanttChart import GanttChart
+from Process import arrange
 
 # Initialize process_amount as 0
 process_amount = 0
@@ -68,10 +69,9 @@ sequence_of_process = list()
 # This is where the processing begins:
 while True:
     # Check if a process / processes needs to put to the waiting_queue
-    print("Time: " + str(current_time))
+    #print("Time: " + str(current_time))
     # _ = input("Press any key to continue...")
 
-    # WARNING: THIS FOR LOOP DOES NOT WORK (YET) ==========================
     index_to_remove = list()
     for process in processes:
         if process.arrival_time == current_time:
@@ -82,14 +82,14 @@ while True:
         processes.pop(index)
 
     # DEBUG
-    print("Processes left")
-    for process in processes:
-        print(process)
+    #print("Processes left")
+    #for process in processes:
+    #    print(process)
 
-    print("Processes inside ready queue:")
-    for process in ready_queue:
-        print(process)
-    # WARNING: READ ABOVE. ================================================
+    #print("Processes inside ready queue:")
+    #for process in ready_queue:
+    #    print(process)
+
 
     # _ = input("Press any key to continue...")
 
@@ -174,12 +174,8 @@ while True:
 
     # _ = input("Press any key to continue...")
 
-print("\n\nSequence of process is now: ")
-
-# Replace this with GANTT chart.
-for process in sequence_of_process:
-    print(process)
-
+print("\n\nGantt Chart: ")
+print(GanttChart(sequence_of_process))
 print("\n\n")
 
 print(f"CPU Utilization: {cpu_utilization(sequence_of_process, arrival_time_zero)}")
