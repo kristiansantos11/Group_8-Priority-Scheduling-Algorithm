@@ -1,5 +1,5 @@
 from typing import List
-from Process import Process
+from Utils.Process import Process
 
 
 def average_turnaround_time(processes: List[Process]):

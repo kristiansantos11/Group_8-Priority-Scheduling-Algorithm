@@ -2,9 +2,9 @@
 # Unlike the ones seen on the internet using lists (it's unreadable but efficient code.)
 # We tried to make this as readable as possible ;)
 # (and yes this takes into account duplicate arrival time AND priority level)
-from Computation import *
-from GanttChart import GanttChart
-from Process import arrange
+from Utils.Computation import *
+from Utils.GanttChart import GanttChart
+from Utils.Process import arrange
 
 # Initialize process_amount as 0
 process_amount = 0
@@ -137,3 +137,5 @@ print(f"CPU Utilization: {cpu_utilization(sequence_of_process, arrival_time_zero
 print(f"Average turnaround time: {average_turnaround_time(sequence_of_process)}")
 print(f"Average response time: {average_response_time(sequence_of_process)}")
 print(f"Average waiting time: {average_waiting_time(sequence_of_process)}")
+
+_ = input("\n\nPress ENTER to exit the program.\n\n")

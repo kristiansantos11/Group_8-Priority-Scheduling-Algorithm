@@ -1,5 +1,5 @@
 from typing import List
-from Process import Process
+from Utils.Process import Process
 
 
 class GanttChart:
