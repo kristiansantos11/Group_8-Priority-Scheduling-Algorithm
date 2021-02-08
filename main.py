@@ -94,22 +94,9 @@ while True:
             ready_queue[0].submission_time = current_time
             process_queue.append(ready_queue.pop(0))
 
-    # Unquote this if you want pre-emptive priority scheduling
-    """elif len(process_queue) == 1 and len(ready_queue) != 0:
-        if ready_queue[0].priority < process_queue[0].priority:
-            process_queue[0].completion_time = current_time
-            swapped_process = Process(process_queue[0].process_id,
-                                      process_queue[0].arrival_time,
-                                      process_queue[0].burst_time,
-                                      process_queue[0].priority,
-                                      process_queue[0].remaining_burst_time,
-                                      process_queue[0].submission_time,
-                                      process_queue[0].completion_time)
-            sequence_of_process.append(swapped_process)
-            ready_queue[0].submission_time = current_time
-            process_queue.append(ready_queue.pop(0))
-            ready_queue.insert(0, process_queue.pop(0))"""
+    # BURST TIME DEDUCTION STARTS HERE
 
+    # If a process exists inside process_queue, deduct 1 to its remaining burst time
     if len(process_queue) == 1:
         process_queue[0].remaining_burst_time -= 1
 
