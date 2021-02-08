@@ -46,7 +46,6 @@ def arrange(processes: List[Process]):
     priority_unique.sort()
 
     for priority in priority_unique:
-        print(f"For priority: {priority}")
         temp = list()
         for process in processes:
             if process.priority == priority:
