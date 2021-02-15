@@ -4,7 +4,7 @@
 # (and yes this takes into account duplicate arrival time AND priority level)
 from Utils.Computation import *
 from Utils.GanttChart import GanttChart
-from Utils.Process import arrange
+from Utils.Process import arrange, Process
 
 # Initialize process_amount as 0
 process_amount = 0
@@ -28,13 +28,7 @@ while True:
 
 for amount in range(1, process_amount + 1):
 
-    # FROM KRISTIAN:
-    # A list called process is created to store:
-    # [process_id, arrival_time, burst_time, priority, finished_state, remaining_burst_time]
-    # I am inclined to use dictionaries however they do not have order.
-    # Efficiency calculations are not important anyways (read attached requirements)
-    # Therefore the program will run in time complexity: O(n^3) = Cubic / Exponential
-    # It is inefficient in python, but it is efficient if implemented in a lower level language
+    # Start input here!
     while True:
         try:
             arrival_time = int(input(f"Enter arrival time of process {str(amount)}: "))
@@ -133,9 +127,9 @@ print(GanttChart(sequence_of_process))
 print("\n\n")
 
 # Output the Utilization, TAT, ART, AWT.
-print(f"CPU Utilization: {cpu_utilization(sequence_of_process, arrival_time_zero)}")
-print(f"Average turnaround time: {average_turnaround_time(sequence_of_process)}")
-print(f"Average response time: {average_response_time(sequence_of_process)}")
-print(f"Average waiting time: {average_waiting_time(sequence_of_process)}")
+print(f"CPU Utilization = {cpu_utilization(sequence_of_process, arrival_time_zero)}%")
+print(f"ATA = {average_turnaround_time(sequence_of_process)}")
+print(f"ART = {average_response_time(sequence_of_process)}")
+print(f"AWT = {average_waiting_time(sequence_of_process)}")
 
 _ = input("\n\nPress ENTER to exit the program.\n\n")
